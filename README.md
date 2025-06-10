@@ -42,7 +42,7 @@ Users can browse, filter, and view detailed information about their favorite Dra
 
 5. Open your browser and go to:
 ```bash
-http://localhost:4200
+   http://localhost:4200
 ```
 
 
