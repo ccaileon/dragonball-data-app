@@ -1,0 +1,13 @@
+<img [src]="'assets/images/cabecera.png'" width="70%" class="d-block mx-auto mt-5"/>
+<h1 class="text-center mt-5">Biblioteca de Dragon Ball</h1>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-center mt-2">
+    <img [src]="personajeAleatorio.image" height="300px" alt="Imagen Personaje" />
+    <div class="ms-4">
+      <h4>{{ personajeAleatorio.name }}</h4>
+      <p><strong>Género:</strong> {{ personajeAleatorio.gender === "Male" ? "Masculino" : personajeAleatorio.gender === "Female" ? "Femenino" : personajeAleatorio.gender }}</p>
+      <p><strong>Raza:</strong> {{ personajeAleatorio.race === 'Human' ? 'Humano' : personajeAleatorio.race === 'God' ? 'Dios' : personajeAleatorio.race === 'Unknown' ? 'Desconocida' : personajeAleatorio.race  }}</p>
+    </div>
+  </div>
+    <button class="btn d-block mx-auto mt-5" (click)="obtenerPersonaje()">Personaje Aleatorio</button>
+</div>

@@ -1,0 +1,118 @@
+.card {
+  display: flex;
+  flex-direction: column;
+margin: 0;
+padding: 0;
+border: none;
+  box-shadow: 0 0 0 2px white;
+  width: 25rem !important;
+  background: linear-gradient(to bottom, #cfbbe0 20%, rgb(255, 255, 255) 100%) !important;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column; 
+height: 100%;
+}
+
+.contenedor-cartas {
+  margin-top: 2.5rem;
+}
+
+ul.list-group {
+  margin-bottom: 0; 
+}
+
+.list-group-item {
+  background-color: transparent; 
+}
+
+.card-header {
+  background: linear-gradient(to bottom, rgb(175, 55, 255) 10%, rgb(76, 15, 174) 100%);
+  margin: 0;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  width: 100%; 
+}
+
+.card-footer {
+  margin: auto;
+  padding-top: 2rem;
+  background-color: transparent;
+  padding-bottom: 2rem;
+}
+
+.card-body {
+  flex-grow: 1;
+  padding-top: 3rem;
+}
+
+
+.card-img-top {
+  height: 300px;
+  width: auto;
+  object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);  
+
+}
+
+label {
+  color: white!important;
+}
+
+/* Modal general */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: rgb(17, 17, 17);
+  color: white;
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 500px;
+  max-height: 80vh; 
+  overflow-y: auto; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Cards Transformaciones */
+.card-body-transf {
+  display: flex;
+  align-items: center; 
+border-bottom: 2px solid white;
+}
+
+.imagen-container-transf img {
+  width: 150px; 
+  height: auto;
+  border-radius: 8px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.datos-container-transf {
+  margin-left: 20px; 
+  flex: 1; 
+color: white;
+}
+
+.list-group-item.transf {
+  background: linear-gradient(to bottom, rgb(175, 55, 255) 10%, rgb(76, 15, 174) 100%);;
+color: white;
+}

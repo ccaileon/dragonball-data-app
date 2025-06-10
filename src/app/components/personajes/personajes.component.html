@@ -1,0 +1,181 @@
+<h1 class="text-center">Catálogo de personajes</h1>
+
+<div class="container">
+  <div class="row mb-4">
+    <form [formGroup]="formularioFiltro" class="d-flex w-100">
+      <!-- Filtro de Raza -->
+      <div class="col-md-4">
+        <label for="race">Raza:</label>
+        <select formControlName="race" id="race" class="form-control">
+          <option value="">Todas</option>
+          <option *ngFor="let raza of razas" [value]="raza">
+            {{
+              raza === "Human"
+                ? "Humano"
+                : raza === "God"
+                ? "Dios"
+                : raza === "Unknown"
+                ? "Desconocida"
+                : raza
+            }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Filtro de Género -->
+      <div class="col-md-4 ms-3">
+        <label for="gender">Género:</label>
+        <select formControlName="gender" id="gender" class="form-control">
+          <option value="">Todos</option>
+          <option *ngFor="let genero of generos" [value]="genero">
+            {{
+              genero === "Male"
+                ? "Masculino"
+                : genero === "Female"
+                ? "Femenino"
+                : genero
+            }}
+          </option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <!-- Mensaje si no se encuentran personajes que coincidan con el filtro -->
+  <div
+    *ngIf="personajesFiltrados.length === 0"
+    class="alert alert-warning text-center"
+  >
+    No se han encontrado personajes con esos filtros.
+  </div>
+
+  <!-- Personajes filtrados -->
+  <div class="row">
+    <div
+      *ngFor="let personaje of personajesFiltrados"
+      class="col-md-4 contenedor-cartas"
+    >
+      <div class="card">
+        <div class="card-header text-center">
+          <h5>{{ personaje.name }}</h5>
+        </div>
+        <img
+          class="card-img-top"
+          [src]="personaje.image"
+          alt="Card image cap"
+        />
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong
+              >Raza:
+              {{
+                personaje.race === "Human"
+                  ? "Humano"
+                  : personaje.race === "God"
+                  ? "Dios"
+                  : personaje.race === "Unknown"
+                  ? "Desconocida"
+                  : personaje.race
+              }}</strong
+            >
+          </li>
+          <li class="list-group-item">
+            <strong
+              >Género:
+              {{
+                personaje.gender === "Male"
+                  ? "Masculino"
+                  : personaje.gender === "Female"
+                  ? "Femenino"
+                  : personaje.gender
+              }}</strong
+            >
+          </li>
+          <li class="list-group-item">
+            <strong
+              >Ki:
+              {{ personaje.ki === "unknown" ? "Desconocido" : personaje.ki }} |
+              Max.Ki:
+              {{
+                personaje.maxKi === "unknown" ? "Desconocido" : personaje.maxKi
+              }}</strong
+            >
+          </li>
+        </ul>
+        <!-- Botón Leer Historia -->
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="leerHistoria(personaje.id)">
+            Historia
+          </button>
+          <!-- Botón Transformaciones -->
+          <button
+            class="btn btn-primary ms-4"
+            (click)="obtenerTransformaciones(personaje.id)"
+          >
+            Transformaciones
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Historia -->
+<div
+  *ngIf="modalVisibleHistoria"
+  class="modal-overlay"
+  (click)="cerrarModalHistoria()"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3 class="text-center">Historia de {{ nombreSeleccionado }}</h3>
+    <div class="row">
+      <p>{{ historiaSeleccionada }}</p>
+    </div>
+    <button class="btn" (click)="cerrarModalHistoria()">Cerrar</button>
+  </div>
+</div>
+
+<!-- Modal Transformaciones-->
+<div
+  *ngIf="modalVisibleTransformacion"
+  class="modal-overlay"
+  (click)="cerrarModalTransformacion()"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3 class="text-center">Transformaciones de {{ nombreSeleccionado }}</h3>
+    <div
+      class="card-transf"
+      *ngFor="let transformacion of listaTransformaciones"
+    >
+      <div class="card-body-transf d-flex">
+        <div class="imagen-container-transf">
+          <img
+            class="card-img-left"
+            [src]="transformacion.image"
+            alt="Imagen del personaje"
+          />
+        </div>
+
+        <!-- Datos Transformación -->
+        <div class="datos-container-transf ms-3">
+          <h5>{{ transformacion.name }}</h5>
+          <ul class="list-group">
+            <li class="list-group-item transf">
+              <strong>Ki:</strong> {{ transformacion.ki }}
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+    <div
+      *ngIf="listaTransformaciones.length === 0"
+      class="alert alert-warning text-center"
+    >
+      Este personaje no tiene transformaciones conocidas.
+    </div>
+     <button class="btn mt-2" (click)="cerrarModalTransformacion()">Cerrar</button>
+  </div>
+ 
+</div>

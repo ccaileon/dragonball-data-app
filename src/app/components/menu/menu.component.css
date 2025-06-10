@@ -1,0 +1,25 @@
+.navbar {
+    background: linear-gradient(to bottom, rgb(175, 55, 255) 10%, rgb(76, 15, 174) 100%);
+    color: white!important;
+    border-bottom: 2px solid white;
+}
+
+.nav-link {
+  color: white!important;
+}
+
+.nav-link:hover {
+color: rgb(255, 230, 0)!important;
+}
+
+.nav-link.active {
+color: rgb(255, 230, 0)!important;
+font-weight: bold;
+}
+
+.navbar-brand {
+  color: rgb(255, 255, 255)!important;
+font-weight: bold;
+font-family: 'Bebas';
+font-size: 1.5em;
+}

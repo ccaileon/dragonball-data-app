@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Bebas';
+  src: url('assets/fonts/bebas2.ttf') format('truetype');
+  font-weight: normal;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(19, 16, 21) 70%, rgb(34, 0, 87) 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center center; 
+  min-height: 100vh; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+  cursor: url("assets/images/cursor.png") 8 8, auto;
+
+  }
+
+h1, h2, h3, h4, h5 {
+  color: white!important;
+    font-family: 'Bebas';
+}
+
+h1 {
+  font-size: 4em!important;
+  margin-top: 3%!important;
+  margin-bottom: 3%!important;
+}
+
+h3 {
+
+  font-size: 2.5em!important;
+  margin-top: 3%!important;
+  margin-bottom: 3%!important;
+}
+
+h5 {
+  font-size: 1.5em!important;
+  font-family: 'Bebas';
+}
+
+p {
+  color: white;
+}
+
+.alert {
+  background-color: rgb(112, 43, 176)!important;
+  color: rgb(224, 191, 254)!important;
+}
+
+.container {
+  padding: 1.5rem;
+}
+
+.btn {
+  background: linear-gradient(to bottom, rgb(175, 55, 255) 10%, rgb(76, 15, 174) 100%);
+  border: none!important;
+  color: white!important;
+
+}
+
+.btn-yellow {
+  background-color: rgb(213, 118, 1);
+  border-radius: 5px;
+  border: none!important;
+  color: white!important;
+
+}
+
+.btn-yellow:hover {
+    background-color: rgb(255, 154, 30);
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, rgb(190, 97, 253) 10%, rgb(98, 31, 206) 100%);
+  }
+  
+
+  a {
+      text-decoration: none!important;
+  }

@@ -1,0 +1,76 @@
+<h1 class="text-center">Listado de Planetas</h1>
+
+<div class="container">
+  <!-- Planetas -->
+  <div class="row">
+    <div *ngFor="let planeta of planetas" class="col-md-4 contenedor-cartas">
+      <div class="card">
+        <div class="card-header text-center">
+          <h5>{{ planeta.name }}</h5>
+        </div>
+
+        <img class="card-img-top" [src]="planeta.image" alt="Card image cap" />
+
+        <div class="card-body">
+          <h6 class="card-title">Historia del planeta {{ planeta.name }}:</h6>
+          <p class="card-text p-black">{{ planeta.description }}</p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>
+              Estado:
+              <span [style.color]="planeta.isDestroyed ? 'red' : 'green'">
+                {{ planeta.isDestroyed ? "Destruido" : "Activo" }}
+              </span>
+            </strong>
+          </li>
+        </ul>
+
+        <!-- Botón Habitantes -->
+        <div class="card-footer">
+          <button
+            class="btn btn-primary"
+            (click)="obtenerHabitantes(planeta.id)"
+          >
+            Ver Habitantes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Habitantes -->
+<div *ngIf="modalVisible" class="modal-overlay" (click)="cerrarModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3 class="text-center">Habitantes del Planeta</h3>
+
+    <div class="row">
+      <div
+        *ngFor="let personaje of listadoHabitantes"
+        class="col-md-4 contenedor-habitante"
+      >
+        <div class="habitante">
+          <div class="imagen-habitante">
+            <img
+              class="img-habitante"
+              [src]="personaje.image"
+              alt="Imagen Habitante"
+            />
+          </div>
+
+          <h5 class="nombre-habitante text-center">{{ personaje.name }}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="listadoHabitantes.length === 0"
+      class="alert alert-warning text-center"
+    >
+      No hay datos de habitantes en este planeta.
+    </div>
+    <button class="btn" (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
