@@ -59,9 +59,9 @@ Users can browse, filter, and view detailed information about their favorite Dra
 
 ![Characters](/screenshots/characters.png)  
 
-![Characters Filter](/screenshots/characters-filter.png) 
+![Characters Filter](/screenshots/character-filter.png) 
 
-![Character Transformations](/screenshots/character-transformations.png)  
+![Character Transformations](/screenshots/character-transformation.png)  
 
 ![Character Story](/screenshots/character-story.png)  
 
