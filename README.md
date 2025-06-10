@@ -53,6 +53,23 @@ Users can browse, filter, and view detailed information about their favorite Dra
 + Click on a planet to view detailed information about its inhabitants.
 
 
+## Screenshots
+
+![Home Page](/screenshots/index.png)  
+
+![Characters](/screenshots/characters.png)  
+
+![Characters Filter](/screenshots/characters-filter.png) 
+
+![Character Transformations](/screenshots/character-transformations.png)  
+
+![Character Story](/screenshots/character-story.png)  
+
+![Planets](/screenshots/planets.png) 
+
+![Planet Inhabitants](/screenshots/planet-inhabitants.png)  
+
+
 ## Author
 
 Noelia Cegarra Castillo
