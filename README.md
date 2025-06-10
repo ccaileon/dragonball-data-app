@@ -3,7 +3,6 @@
 An Angular application that connects to the [Dragon Ball API](https://web.dragonball-api.com/) to retrieve data about characters and their planets.  
 Users can browse, filter, and view detailed information about their favorite Dragon Ball characters and the planets they come from.
 
-**This project was completed as part of my training in web development.**
 
 ## Features
 
@@ -59,3 +58,5 @@ Users can browse, filter, and view detailed information about their favorite Dra
 Noelia Cegarra Castillo
 
 [GitHub Profile](https://github.com/ccaileon) | [Linkedin](https://www.linkedin.com/in/noelia-cegarra-castillo/)
+
+**This project was completed as part of my training in web development.**
